@@ -52,7 +52,7 @@ class Solution:
         for i,node in enumerate(node_list[:-1]):
             node_list[i].next=node_list[i+1]
            
-        return tuple(node_list)[0]   
+        return node_list[0]   
     
 
  
