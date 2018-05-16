@@ -5,13 +5,28 @@ class Solution:
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
-        """              
+        """   
+        
+        """
+        # 方法一:
         for j,num in enumerate(nums):
             for k,second_num in enumerate(nums[j+1:]):
                 if num+second_num == target:
                     return list((j,k+j+1))
         return False
-
+        """ 
+        
+        # 方法二:
+        list_num=[]
+        for j,num in enumerate(nums):
+            temp=target-num
+            if temp in nums:
+                if j!=nums.index(temp):
+                    list_num.append(j)
+                    list_num.append(nums.index(temp))
+                    list_num.sort()
+                    return list_num
+        return False
     
 # 问题二：给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
 # 你可以假设除了数字 0 之外，这两个数字都不会以零开头。
