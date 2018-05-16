@@ -68,9 +68,22 @@ class Solution:
             node_list[i].next=node_list[i+1]
            
         return node_list[0]   
-    
+   
 
+# 问题七：给定一个 32 位有符号整数，将整数中的数字进行反转。
+class Solution:
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        temp=int(str(x)[::-1]) if x >= 0 else int(str(x)[::-1][:-1])*(-1)
+        if temp > pow(2,31)-1 or temp< pow(2,31)*(-1):
+            return 0
+        else:
+            return temp
  
+
 # 问题九：判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。    
 class Solution:
     def isPalindrome(self, x):
